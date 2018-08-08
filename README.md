@@ -8,3 +8,6 @@ $ npm install
 $ npm install -g webpack webpack-cli
 $ npm run start
 ```
+
+## Deploy to Ropsten Network to use truffle
+truffle migrate --complile-all --reset --network ropsten
