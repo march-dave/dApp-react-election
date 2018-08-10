@@ -4,6 +4,7 @@ import Web3 from 'web3'
 import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
+import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends React.Component {
@@ -78,20 +79,34 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class='row'>
-        <div class='col-lg-12 text-center' >
-          <h1>RealEstate 2</h1>
-          <br/>
-          
-          {/* { this.state.loading || this.state.voting
-            ? <p class='text-center'>Loading...</p>
-            : <Content
-                account={this.state.account}
-                candidates={this.state.candidates}
-                hasVoted={this.state.hasVoted}
-                castVote={this.castVote} />
-          } */}
+      <div class="container">
+     
+        <div class='row'>
+          <div class='col-lg-12 text-center' >
+            <h1>RealEstate 2</h1>
+            <br/>
+            
+            <ul>
+                {
+                  data.map( i => {
+                    return (<li> {i.type} - {i.price}  </li>)
+                  })
+                }
+
+            </ul>
+
+
+            {/* { this.state.loading || this.state.voting
+              ? <p class='text-center'>Loading...</p>
+              : <Content
+                  account={this.state.account}
+                  candidates={this.state.candidates}
+                  hasVoted={this.state.hasVoted}
+                  castVote={this.castVote} />
+            } */}
+          </div>
         </div>
+
       </div>
     )
   }
