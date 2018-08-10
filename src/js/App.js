@@ -82,8 +82,9 @@ class App extends React.Component {
       <div class="container">
      
         <div class='row'>
-          <div class='col-lg-12 text-center' >
-            <h1>RealEstate 2</h1>
+          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center">RealEstate 2</h1>
+            <hr />
             <br/>
             
             <ul>
@@ -106,6 +107,12 @@ class App extends React.Component {
             } */}
           </div>
         </div>
+
+          <div id="events"></div>
+
+          <div class="row" id="list">
+              Real Estate List
+          </div>
 
       </div>
     )
