@@ -7,6 +7,7 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
+import Menu from './Menu.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -84,6 +85,9 @@ class App extends React.Component {
      
         <div class='row'>
           <div class="col-xs-12 col-sm-8 col-sm-push-2">
+
+          <Menu />
+
             <h1 class="text-center">RealEstate 2</h1>
             <hr />
             <br/>
