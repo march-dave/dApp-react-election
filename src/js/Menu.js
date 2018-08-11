@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom';
 class Menu extends Component {
     render() {
         return (
-            <div>
+            <div class="header">
                 <ul class="nav">
-                    <li><Link to="/container/DBPlatform">DB Platform</Link></li>
-                    <li><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
-                    <li><Link to="/container/MarketPlace">Market Place</Link></li>
-                    <li><Link to="/components/Help">Help</Link></li>
+                    <li class="nav-item"><Link to="/container/DBPlatform">DB Platform</Link></li>
+                    <li class="nav-item"><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
+                    <li class="nav-item"><Link to="/container/MarketPlace">Market Place</Link></li>
+                    <li class="nav-item"><Link to="/components/Help">Help</Link></li>
                 </ul>
             </div>
         );
