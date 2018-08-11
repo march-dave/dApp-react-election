@@ -84,11 +84,21 @@ class App extends React.Component {
     return (
       <div class="container-fluid">
      
-        <Menu />
         <div class="row">
-          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1 header">
+          Header
+            <div>
+            <Menu />
+            </div>
+          </div>
+        </div>
 
-            <h1 class="text-center">RealEstate 2</h1>
+        <div class="row">
+          <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1  content">
+
+            Content
+
+            {/* <h1 class="text-center">RealEstate 2</h1>
             <hr />
             <br/>
             
@@ -99,7 +109,17 @@ class App extends React.Component {
                   })
                 }
 
-            </ul>
+            </ul> */}
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-x2-12 col-xs-4 col-sm-3 col-md-2 col-lg-1  footer">
+            Footer
+          </div>
+        </div>
+          
 
 
             {/* { this.state.loading || this.state.voting
@@ -110,14 +130,12 @@ class App extends React.Component {
                   hasVoted={this.state.hasVoted}
                   castVote={this.castVote} />
             } */}
-          </div>
-        </div>
-
-          <div id="events"></div>
+          {/* <div id="events"></div>
 
           <div class="row" id="list">
               Real Estate List
-          </div>
+          </div> */}
+
 
       </div>
     )

@@ -1,57 +1,3 @@
-/* css tutor */
-
-.wrapper {
-    display: flex;
-}
-
-header,
-.header {
-    background-color: blue;
-    height: 20vh;
-    /* display: block; old browser */
-    font-size: 12px;
-}
-
-main {
-    /*width: 60%;*/
-    /*height: 60vh;*/
-    /* background-color: rgba(255, 192, 203, 0.447); */
-    /*float: left;*/
-    padding: 1rem 2rem;
-    flex: 6;
-    /*display: flex;*/
-    /*overflow: scroll;*/
-}
-
-.nav {
-    /*width: 20%;*/
-    background-color: #1A1F2C;
-    /*float: left;*/
-    /* padding: 1rem 2rem; */
-    flex: 1.8;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 48px;
-    text-transform: uppercase;
-}
-
-nav.left {
-    /*float: left;*/
-}
-
-nav.right {
-    /*float: right;*/
-}
-
-footer {
-    background-color: green;
-    height: 20vh;
-    clear: both;
-    /* position: absolute; */
-    /* bottom: 200px; */
-    /* left: 100px; */
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -68,11 +14,13 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 10px 10px;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
+
+/* Change the link color to #111 (black) on hover */
+
 li a:hover {
     background-color: #111;
-    text-decoration: none;
 }
