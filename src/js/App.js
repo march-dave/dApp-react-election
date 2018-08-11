@@ -7,6 +7,7 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
+import '../styles/app.css'
 import Menu from './Menu.js'
 
 class App extends React.Component {
