@@ -6,7 +6,7 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
-import {BrowserRouter} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
@@ -120,9 +120,12 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  (<BrowserRouter>
-   <App />
-  </BrowserRouter>),
-  document.querySelector('#root')
-)
+export default App;
+
+
+// ReactDOM.render(
+//   (<BrowserRouter>
+//    <App />
+//   </BrowserRouter>),
+//   document.querySelector('#root')
+// )
