@@ -5,7 +5,7 @@ class Menu extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <ul class="nav">
                     <li><Link to="/container/DBPlatform">DB Platform</Link></li>
                     <li><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
                     <li><Link to="/container/MarketPlace">Market Place</Link></li>

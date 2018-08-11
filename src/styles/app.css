@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
-
-/*
-	Introspect by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-
-
-/* Reset */
+/* @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico"); */
 
 html,
 body,
@@ -152,4 +143,58 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+
+/* css tutor */
+
+.wrapper {
+    display: flex;
+}
+
+header,
+.header {
+    background-color: blue;
+    height: 20vh;
+    /* display: block; old browser */
+}
+
+main {
+    /*width: 60%;*/
+    /*height: 60vh;*/
+    /* background-color: rgba(255, 192, 203, 0.447); */
+    /*float: left;*/
+    padding: 1rem 2rem;
+    flex: 6;
+    /*display: flex;*/
+    /*overflow: scroll;*/
+}
+
+.nav {
+    /*width: 20%;*/
+    background-color: #1A1F2C;
+    /*float: left;*/
+    /* padding: 1rem 2rem; */
+    flex: 1.8;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+
+nav.left {
+    /*float: left;*/
+}
+
+nav.right {
+    /*float: right;*/
+}
+
+footer {
+    background-color: green;
+    height: 20vh;
+    clear: both;
+    /* position: absolute; */
+    /* bottom: 200px; */
+    /* left: 100px; */
 }
