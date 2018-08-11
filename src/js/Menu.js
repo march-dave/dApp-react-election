@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 class Menu extends Component {
     render() {
         return (
-            <div class="navbar navbar-dark bg-primary">
+            <div>
                 <ul>
                     <li><Link to="/container/DBPlatform">DB Platform</Link></li>
                     <li><Link to="/container/ReverseAuction">Reverse Auction</Link></li>

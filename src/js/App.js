@@ -84,10 +84,9 @@ class App extends React.Component {
     return (
       <div class="container">
      
-        <div class='row'>
+        <Menu />
+        <div class="row">
           <div class="col-xs-12 col-sm-8 col-sm-push-2">
-
-          <Menu />
 
             <h1 class="text-center">RealEstate 2</h1>
             <hr />
