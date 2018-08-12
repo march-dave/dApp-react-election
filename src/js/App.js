@@ -85,12 +85,15 @@ class App extends React.Component {
       <div class="container-fluid">
      
         <div class="row">
-          <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1 header">
-          Header
-            {/* <div>
-            <Menu />
-            </div> */}
-          </div>
+          {/* <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1 header">
+          Header */}
+            <div class="col-xs-4 menu">
+             Menu
+            </div>
+            <div class="col-xs-8 content">
+             Content
+            </div>
+          {/* </div> */}
         </div>
 
         <div class="row">
