@@ -87,9 +87,9 @@ class App extends React.Component {
         <div class="row">
           <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1 header">
           Header
-            <div>
+            {/* <div>
             <Menu />
-            </div>
+            </div> */}
           </div>
         </div>
 
