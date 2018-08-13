@@ -18,11 +18,11 @@ class Menu extends Component {
                 </div> */}
 
                 <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item"><Link to="/container/DBPlatform">DB Platform</Link></li>
-                        <li class="nav-item"><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
-                        <li class="nav-item"><Link to="/container/MarketPlace">Market Place</Link></li>
-                        <li class="nav-item"><Link to="/components/Help">Help</Link></li>
+                    <ul>
+                        <li><Link to="/container/DBPlatform">DB Platform</Link></li>
+                        <li><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
+                        <li><Link to="/container/MarketPlace">Market Place</Link></li>
+                        <li><Link to="/components/Help">Help</Link></li>
                     </ul>
                 </div>
             </div>
