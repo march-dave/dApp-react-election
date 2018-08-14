@@ -94,10 +94,10 @@ class App extends React.Component {
 
         <div class="row card-block">
          
-            <div class="col-xs-2"></div>
-            <div class="col-xs-8">
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-8">2
             <ProductCarousel /></div>
-            <div class="col-xs-2"></div>
+            <div class="col-xs-2">3</div>
             
             {/* <ul>
                 {

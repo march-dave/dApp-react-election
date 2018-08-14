@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 
 class ProductCarousel extends Component {
+    state = {
+        slideIndex: 0
+      };
     render() {
         return (
             <Carousel
