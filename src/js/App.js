@@ -10,6 +10,8 @@ import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
 
+import ProductCarousel from './container/ProductCarousel.js'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -84,25 +86,20 @@ class App extends React.Component {
     return (
       <div class="container-fluid">
      
-        <div class="row">
-          {/* <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1 header">
-          Header */}
-            <div class="col-xs-4 menu">
-             <Menu />
-            </div>
-          {/* </div> */}
+        <div class="row card-header">
+              <div class="col-xs-2">Icon</div>
+              <div class="col-xs-8 menu"><Menu /></div>
+              <div class="col-xs-2">Login</div>
         </div>
 
-        <div class="row">
-          <div class="col-xs-12 col-xs-4 col-sm-3 col-md-2 col-lg-1  content">
-
-            Content
-
-            {/* <h1 class="text-center">RealEstate 2</h1>
-            <hr />
-            <br/>
+        <div class="row card-block">
+         
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+            <ProductCarousel /></div>
+            <div class="col-xs-2"></div>
             
-            <ul>
+            {/* <ul>
                 {
                   data.map( i => {
                     return (<li> {i.type} - {i.price}  </li>)
@@ -110,12 +107,11 @@ class App extends React.Component {
                 }
 
             </ul> */}
-
-          </div>
+         
         </div>
 
-        <div class="row">
-          <div class="col-x2-12 col-xs-4 col-sm-3 col-md-2 col-lg-1  footer">
+        <div class="row card-footer">
+          <div class="footer">
             Footer
           </div>
         </div>
