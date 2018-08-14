@@ -94,11 +94,13 @@ class App extends React.Component {
 
         <div class="row card-block">
          
-            <div class="col-xs-2">1</div>
+            {/* <div class="col-xs-2">1</div>
             <div class="col-xs-8">2
-            <ProductCarousel /></div>
-            <div class="col-xs-2">3</div>
+            </div>
+            <div class="col-xs-2">3</div> */}
             
+            <ProductCarousel />
+
             {/* <ul>
                 {
                   data.map( i => {
