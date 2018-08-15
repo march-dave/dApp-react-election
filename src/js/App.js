@@ -84,20 +84,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="container-fluid">
+      <div className="container-fluid">
      
-        <div class="row card-header">
-              <div class="col-xs-2">Icon</div>
-              <div class="col-xs-8 menu"><Menu /></div>
-              <div class="col-xs-2">Login</div>
+        <div className="row card-header">
+              <div className="col-xs-2">Icon</div>
+              <div className="col-xs-8 menu"><Menu /></div>
+              <div className="col-xs-2">Login</div>
         </div>
 
-        <div class="row card-block">
+        <div className="row card-block">
          
-            {/* <div class="col-xs-2">1</div>
-            <div class="col-xs-8">2
+            {/* <div className="col-xs-2">1</div>
+            <div className="col-xs-8">2
             </div>
-            <div class="col-xs-2">3</div> */}
+            <div className="col-xs-2">3</div> */}
             
             <ProductCarousel />
 
@@ -112,8 +112,8 @@ class App extends React.Component {
          
         </div>
 
-        <div class="row card-footer">
-          <div class="footer">
+        <div className="row card-footer">
+          <div className="footer">
             Footer
           </div>
         </div>
@@ -121,7 +121,7 @@ class App extends React.Component {
 
 
             {/* { this.state.loading || this.state.voting
-              ? <p class='text-center'>Loading...</p>
+              ? <p className='text-center'>Loading...</p>
               : <Content
                   account={this.state.account}
                   candidates={this.state.candidates}
@@ -130,7 +130,7 @@ class App extends React.Component {
             } */}
           {/* <div id="events"></div>
 
-          <div class="row" id="list">
+          <div className="row" id="list">
               Real Estate List
           </div> */}
 
