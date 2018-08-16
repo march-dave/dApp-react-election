@@ -95,8 +95,6 @@ class App extends React.Component {
 
         <div className="row card-block">
          
-           
-
           <Grid>
             <h3>  </h3>
              <ProductCarousel />
