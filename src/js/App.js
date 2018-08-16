@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Web3 from 'web3'
+// import Web3 from 'web3'
+
+import web3 from '../web3.js'
 import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
