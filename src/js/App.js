@@ -95,22 +95,22 @@ class App extends React.Component {
 
         <div className="row card-block">
          
-            {/* <ProductCarousel /> */}
+           
 
           <Grid>
-          <h3>  </h3>
-          <Form>
-            <input 
-              type = "file"
-              
-            />
-             <Button 
-             bsStyle="primary" 
-             type="submit"> 
-             Send it 
-             </Button>
-          </Form>
-
+            <h3>  </h3>
+             <ProductCarousel />
+            <Form>
+              <input 
+                type = "file"
+                
+              />
+              <Button 
+              bsStyle="primary" 
+              type="submit"> 
+              Send it 
+              </Button>
+            </Form>
 
              <Table bordered responsive>
                 <thead>
