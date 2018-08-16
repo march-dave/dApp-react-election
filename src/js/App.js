@@ -97,32 +97,43 @@ class App extends React.Component {
          
             {/* <ProductCarousel /> */}
 
+          <Grid>
+          <h3>  </h3>
+          <Form>
+            <input 
+              type = "file"
+              
+            />
+             <Button 
+             bsStyle="primary" 
+             type="submit"> 
+             Send it 
+             </Button>
+          </Form>
+
+
              <Table bordered responsive>
                 <thead>
                   <tr>
-                    <th>Tx Receipt Category</th>
-                    <th>Values</th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                
                 <tbody>
                   <tr>
-                    <td>IPFS Hash # stored on Eth Contract</td>
+                    <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td>Ethereum Contract Address</td>
+                    <td></td>
                     <td></td>
                   </tr>
-
-                  <tr>
-                    <td>Tx Hash # </td>
-                    <td></td>
-                  </tr>
-                             
+                
                 </tbody>
               </Table>
 
+            </Grid>
 
             {/* <ul>
                 {
