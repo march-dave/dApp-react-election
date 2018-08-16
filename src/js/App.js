@@ -94,12 +94,34 @@ class App extends React.Component {
 
         <div className="row card-block">
          
-            {/* <div className="col-xs-2">1</div>
-            <div className="col-xs-8">2
-            </div>
-            <div className="col-xs-2">3</div> */}
-            
-            <ProductCarousel />
+            {/* <ProductCarousel /> */}
+
+             {/* <Table bordered responsive>
+                <thead>
+                  <tr>
+                    <th>Tx Receipt Category</th>
+                    <th>Values</th>
+                  </tr>
+                </thead>
+               
+                <tbody>
+                  <tr>
+                    <td>IPFS Hash # stored on Eth Contract</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Ethereum Contract Address</td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>Tx Hash # </td>
+                    <td></td>
+                  </tr>
+                             
+                </tbody>
+            </Table> */}
+
 
             {/* <ul>
                 {
