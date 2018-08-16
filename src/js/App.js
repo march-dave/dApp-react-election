@@ -5,6 +5,7 @@ import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
+import {Table, Grid, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
@@ -96,7 +97,7 @@ class App extends React.Component {
          
             {/* <ProductCarousel /> */}
 
-             {/* <Table bordered responsive>
+             <Table bordered responsive>
                 <thead>
                   <tr>
                     <th>Tx Receipt Category</th>
@@ -120,7 +121,7 @@ class App extends React.Component {
                   </tr>
                              
                 </tbody>
-            </Table> */}
+              </Table>
 
 
             {/* <ul>
