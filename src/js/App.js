@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import Web3 from 'web3'
+import Web3 from 'web3'
 
-import web3 from '../web3.js'
+// import web3 from '../web3.js'
 import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
@@ -43,7 +43,7 @@ class App extends React.Component {
 
   componentDidMount() {
     // TODO: Refactor with promise chain
-    this.web3.eth.getCoinbase((err, account) => {
+    web3.eth.getCoinbase((err, account) => {
       this.setState({ account })
       this.election.deployed().then((electionInstance) => {
         this.electionInstance = electionInstance
