@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /*** The Essential Code ***/
 
 body {
-    font-family: 'Josefin Sans', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     margin: 0;
     padding-left: 200px;
