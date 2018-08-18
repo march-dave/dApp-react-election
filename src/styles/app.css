@@ -54,7 +54,31 @@ body {
     clear: both;
 }
 
+#searchLine {
+    width: 75%;
+    height: 75px;
+    /* margin-left: 25%; */
+    margin-right: auto;
+    margin-top: 2%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
+#searchText,
+#searchButton,
+#searchCategory,
+#searchFilter {
+    width: 24%;
+    height: 75px;
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+    float: left;
+}
+
+#sub
 /*** IE Fix ***/
 
 * html #left {
