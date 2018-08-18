@@ -96,8 +96,8 @@ class App extends React.Component {
           <ProductCarousel />
           
           <div id="searchLine">
-            <div id="searchText"> Search Text </div> 
-            <div id="searchButton"> Search Button</div>
+            <div id="searchText"> <input type="text"></input> </div> 
+            <div id="searchButton"> <input type="button">Search</input> </div>
             <div id="searchCategory"> Search Category </div>
             <div id="searchFilter"> Search Filter </div>
           </div>
