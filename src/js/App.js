@@ -8,10 +8,10 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
 // import {Table, Row, Grid, Col, Button, Form } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap'
 import { Route } from 'react-router-dom'
-// import '../styles/app.css'
+// import '../styles/app.css' 
 import Menu from './Menu.js'
 
 import ProductCarousel from './container/ProductCarousel.js'
@@ -88,11 +88,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-xs-2">Col1</div>  
-          <div className="col-xs-8">Col2</div>  
-          <div className="col-xs-2">Col3</div>
+        <div className="col-sm">
+          One of three columns
+        </div>
+        <div className="col-sm">
+          One of three columns
+        </div>
+        <div className="col-sm">
+          One of three columns
+        </div>
         </div>
       </div>
     )
