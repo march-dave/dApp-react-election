@@ -11,7 +11,7 @@ import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap'
 import { Route } from 'react-router-dom'
-// import '../styles/app.css' 
+import '../styles/app.css'
 import Menu from './Menu.js'
 
 import ProductCarousel from './container/ProductCarousel.js'
@@ -88,12 +88,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid ">
+      <div className="container-fluid">
 
-        <div className="row">
-          <div className="col-xs"><Menu /></div>
+        <div className="row" style={{background: "#DDD"}}>
+        
+        <div className="col-sm">
+          Logo
         </div>
-
+        <div className="col-sm-8">
+          <Menu />
+        </div>
+        <div className="col-sm">
+          Login
+        </div>
+        </div>
 
         <div className="row">
         <div className="col-sm">

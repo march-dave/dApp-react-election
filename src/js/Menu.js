@@ -4,27 +4,30 @@ import {Link} from 'react-router-dom';
 class Menu extends Component {
     render() {
         return (
-            <div class="navbar navbar-default">
-                {/* <div class="container-fluid">
-                    <div class="navbar-header">
-                    <a class="navbar-brand" href="#">WebSiteName</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                    </ul>
-                </div> */}
+            <div>
+                <ul className="nav">
+                    <li className="nav-item"><Link to="/container/DBPlatform" className="nav-link">DB Platform</Link></li>
+                    <li className="nav-item"><Link to="/container/ReverseAuction" className="nav-link">Reverse Auction</Link></li>
+                    <li className="nav-item"><Link to="/container/MarketPlace" className="nav-link">Market Place</Link></li>
+                    <li className="nav-item"><Link to="/components/Help" className="nav-link">Help</Link></li>
+                </ul>
 
-                <div class="container-fluid">
-                    <ul>
-                        <li><Link to="/container/DBPlatform">DB Platform</Link></li>
-                        <li><Link to="/container/ReverseAuction">Reverse Auction</Link></li>
-                        <li><Link to="/container/MarketPlace">Market Place</Link></li>
-                        <li><Link to="/components/Help">Help</Link></li>
-                    </ul>
-                </div>
+                {/* <ul className="nav">
+                    <li className="nav-item">
+                        <a className="nav-link active" href="#">Active</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Link</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Link</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul> */}
+
+
             </div>
         );
     }
