@@ -97,7 +97,7 @@ class App extends React.Component {
           
           <div id="searchLine">
             <div id="searchText"> <input type="text"></input> </div> 
-            <div id="searchButton"> <input type="button">Search</input> </div>
+            <div id="searchButton"> Button </div>
             <div id="searchCategory"> Search Category </div>
             <div id="searchFilter"> Search Filter </div>
           </div>
