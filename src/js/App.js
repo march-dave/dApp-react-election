@@ -89,7 +89,7 @@ class App extends React.Component {
     return (
       <div>
         
-        <div id="header">This is the header.</div>
+        <div id="header"><Menu /></div>
 
         <div id="center" class="column">
           <h1>This is the main content.</h1>

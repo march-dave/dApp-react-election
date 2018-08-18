@@ -71,10 +71,10 @@ body {
 
 #header,
 #footer {
-    font-size: large;
+    /* font-size: large; */
     text-align: center;
     padding: 0.3em 0;
-    background: #999;
+    background: #333;
 }
 
 #left {
