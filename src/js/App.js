@@ -88,7 +88,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid ">
+
+        <div className="row">
+          <div className="col-xs"><Menu /></div>
+        </div>
+
+
         <div className="row">
         <div className="col-sm">
           One of three columns
