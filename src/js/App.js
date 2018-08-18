@@ -7,8 +7,8 @@ import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
-import {Table, Grid, Button, Form } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css'
+// import {Table, Grid, Button, Form } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
@@ -87,87 +87,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
-     
-        <div className="row card-header">
-              <div className="col-xs-2">Icon</div>
-              <div className="col-xs-8 menu"><Menu /></div>
-              <div className="col-xs-2">Login</div>
+      <div>
+        
+        <div id="header">This is the header.</div>
+
+        <div id="center" class="column">
+          <h1>This is the main content.</h1>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
         </div>
 
-        <div className="row card-block">
-         
-          <Grid>
-            <h3>  </h3>
-             <ProductCarousel />
-            <Form>
-              <input 
-                type = "file"
-                
-              />
-              <Button 
-              bsStyle="primary" 
-              type="submit"> 
-              Send it 
-              </Button>
-            </Form>
-
-             <Table bordered responsive>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-               
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                
-                </tbody>
-              </Table>
-
-            </Grid>
-
-            {/* <ul>
-                {
-                  data.map( i => {
-                    return (<li> {i.type} - {i.price}  </li>)
-                  })
-                }
-
-            </ul> */}
-         
+        <div id="left" class="column">
+          <h2>This is the left sidebar.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
         </div>
 
-        <div className="row card-footer">
-          <div className="footer">
-            Footer
-          </div>
+        <div id="right" class="column">
+          <h2>This is the right sidebar.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
         </div>
-          
 
-
-            {/* { this.state.loading || this.state.voting
-              ? <p className='text-center'>Loading...</p>
-              : <Content
-                  account={this.state.account}
-                  candidates={this.state.candidates}
-                  hasVoted={this.state.hasVoted}
-                  castVote={this.castVote} />
-            } */}
-          {/* <div id="events"></div>
-
-          <div className="row" id="list">
-              Real Estate List
-          </div> */}
-
+        <div id="footer">This is the footer.</div>
 
       </div>
     )
