@@ -105,13 +105,11 @@ class App extends React.Component {
         {/* <div className="row"><ProductCarousel/></div> */}
 
         <div className="row">
-          <ul>
             {
               data.map( i => {
-                return (<li> {i.type} - {i.price}  </li>)
+                return (<div className="col-sm-4"> {i.type} - {i.price} <img src={i.picture} height="210" width="210"/> </div>)
               })
             }
-          </ul>        
         </div>
 
         <div className="row">
