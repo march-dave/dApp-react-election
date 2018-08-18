@@ -7,10 +7,10 @@ import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
-// import {Table, Grid, Button, Form } from 'react-bootstrap';
+// import {Table, Row, Grid, Col, Button, Form } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
-import '../styles/app.css'
+// import '../styles/app.css'
 import Menu from './Menu.js'
 
 import ProductCarousel from './container/ProductCarousel.js'
@@ -88,35 +88,46 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        
-        <div id="header"><Menu /></div>
+        <Grid>
 
-        <div id="center" class="column">
-          <h1>This is the main content.</h1>
-          <ProductCarousel />
-          
-          <div id="searchLine">
-            <div id="searchText"> <input type="text"></input> </div> 
-            <div id="searchButton"> Button </div>
-            <div id="searchCategory"> Search Category </div>
-            <div id="searchFilter"> Search Filter </div>
-          </div>
-        </div>
+          <Row className="show-grid">
+            <Col xs={12} md={8}>
+              <code>{'<Col xs={12} md={8} />'};</code>
+            </Col>
+            <Col xs={6} md={4}>
+              <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+          </Row>
 
-        {/* <div id="left" class="column">
-          <h2>This is the left sidebar.</h2>
-          <p>Left</p>
-        </div>
+          <Row className="show-grid">
+            <Col xs={6} md={4}>
+              <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+            <Col xs={6} md={4}>
+              <code>{'<Col xs={6} md={4} />'}</code>
+            </Col>
+            <Col xsHidden md={4}>
+              <code>{'<Col xsHidden md={4} />'}</code>
+            </Col>
+          </Row>
 
-        <div id="right" class="column">
-          <h2>This is the right sidebar.</h2>
-          <p>Right</p>
-        </div> */}
+          <Row className="show-grid">
+            <Col xs={6} xsOffset={6}>
+              <code>{'<Col xs={6} xsOffset={6} />'}</code>
+            </Col>
+          </Row>
 
-        
+          <Row className="show-grid">
+            <Col md={6} mdPush={6}>
+              <code>{'<Col md={6} mdPush={6} />'}</code>
+            </Col>
+            <Col md={6} mdPull={6}>
+              <code>{'<Col md={6} mdPull={6} />'}</code>
+            </Col>
+          </Row>
 
-        <div id="footer">This is the footer.</div>
-
+        </Grid>
+       
       </div>
     )
   }
