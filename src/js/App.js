@@ -90,30 +90,65 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
 
-        <div className="row" style={{background: "#DDD"}}>
-        
-        <div className="col-sm">
-          Logo
+        <div className="row" style={{background: "#333"}}>
+          <div className="col-sm">
+            Logo
+          </div>
+          <div className="col-sm-8">
+            <Menu />
+          </div>
+          <div className="col-sm">
+            Login
+          </div>
         </div>
-        <div className="col-sm-8">
-          <Menu />
-        </div>
-        <div className="col-sm">
-          Login
-        </div>
+
+        <div className="row"><ProductCarousel/></div>
+
+        <div className="row">
+          <div className="col-sm">
+            
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
+              {/* <div className="input-group-append"></div>
+                <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+              </div> */}
+            </div>
+          </div>
+          
+
+          <div className="col-sm">
+            <div className="dropdown">
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="#">Action</a>
+                <a className="dropdown-item" href="#">Another action</a>
+                <a className="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm">
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Genuine Filter Category
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item" href="#">Action</a>
+                  <a className="dropdown-item" href="#">Another action</a>
+                  <a className="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+          </div>
+
         </div>
 
         <div className="row">
-        <div className="col-sm">
-          One of three columns
+          <div className="col-sm">Grid</div>
+          <div className="col-sm">Drop Down Box</div>
         </div>
-        <div className="col-sm">
-          One of three columns
-        </div>
-        <div className="col-sm">
-          One of three columns
-        </div>
-        </div>
+
       </div>
     )
   }
