@@ -102,7 +102,17 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div className="row"><ProductCarousel/></div>
+        {/* <div className="row"><ProductCarousel/></div> */}
+
+        <div className="row">
+          <ul>
+            {
+              data.map( i => {
+                return (<li> {i.type} - {i.price}  </li>)
+              })
+            }
+          </ul>        
+        </div>
 
         <div className="row">
           <div className="col-sm">
@@ -155,11 +165,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-// ReactDOM.render(
-//   (<BrowserRouter>
-//    <App />
-//   </BrowserRouter>),
-//   document.querySelector('#root')
-// )

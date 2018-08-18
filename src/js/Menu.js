@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
 class Menu extends Component {
     render() {
         return (
@@ -11,23 +10,6 @@ class Menu extends Component {
                     <li className="nav-item"><Link to="/container/MarketPlace" className="nav-link">Market Place</Link></li>
                     <li className="nav-item"><Link to="/components/Help" className="nav-link">Help</Link></li>
                 </ul>
-
-                {/* <ul className="nav">
-                    <li className="nav-item">
-                        <a className="nav-link active" href="#">Active</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul> */}
-
-
             </div>
         );
     }
