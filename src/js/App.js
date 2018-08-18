@@ -9,6 +9,7 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 import data from '../data.json';
 // import {Table, Row, Grid, Col, Button, Form } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap'
 import { Route } from 'react-router-dom'
 // import '../styles/app.css'
 import Menu from './Menu.js'
@@ -87,47 +88,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Grid>
-
-          <Row className="show-grid">
-            <Col xs={12} md={8}>
-              <code>{'<Col xs={12} md={8} />'};</code>
-            </Col>
-            <Col xs={6} md={4}>
-              <code>{'<Col xs={6} md={4} />'}</code>
-            </Col>
-          </Row>
-
-          <Row className="show-grid">
-            <Col xs={6} md={4}>
-              <code>{'<Col xs={6} md={4} />'}</code>
-            </Col>
-            <Col xs={6} md={4}>
-              <code>{'<Col xs={6} md={4} />'}</code>
-            </Col>
-            <Col xsHidden md={4}>
-              <code>{'<Col xsHidden md={4} />'}</code>
-            </Col>
-          </Row>
-
-          <Row className="show-grid">
-            <Col xs={6} xsOffset={6}>
-              <code>{'<Col xs={6} xsOffset={6} />'}</code>
-            </Col>
-          </Row>
-
-          <Row className="show-grid">
-            <Col md={6} mdPush={6}>
-              <code>{'<Col md={6} mdPush={6} />'}</code>
-            </Col>
-            <Col md={6} mdPull={6}>
-              <code>{'<Col md={6} mdPull={6} />'}</code>
-            </Col>
-          </Row>
-
-        </Grid>
-       
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-2">Col1</div>  
+          <div className="col-xs-8">Col2</div>  
+          <div className="col-xs-2">Col3</div>
+        </div>
       </div>
     )
   }
