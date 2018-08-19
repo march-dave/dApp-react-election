@@ -108,19 +108,36 @@ class App extends React.Component {
             {
               data.map( i => {
                 return (
-                <div className="col-sm-4 border rounded-top">
-                  <img src={i.picture} height="150" width="150"/>
-                  <br />
-                  <strong>ID: </strong><span>{i.id}</span><br />
-                  <strong>Type: </strong><span>{i.type}</span><br />
-                  <strong>Price: </strong><span>{i.price}</span><br />
-                  <strong>Area: </strong><span>{i.area}</span><br />
-                  <button className="btn btn-info btn-buy" type="button">
-                    Buy
+                <div className="col-sm-4 card-body">
+                  <img className="card-img-top"  src={i.picture} width="240"/>
+                  {/* <strong>Type: </strong><span>{i.type}</span> */}
+                  {/* <strong>Price: </strong><span>{i.price}</span> */}
+                  {/* <strong>Area: </strong><span>{i.area}</span> */}
+                  {/* <button className="btn btn-info btn-buy" type="button">
+                      Buy
                   </button>
                   <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
                     Buyer Info
-                  </button>
+                  </button> */}
+
+                  <div className="card-body">
+                    <h5 className="card-title">{i.type}</h5>
+                    <p className="card-text">{i.note}</p>
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item">ID: {i.id}</li>
+                      <li className="list-group-item">Price: {i.price}</li>
+                      <li className="list-group-item">Area: {i.area}</li>
+                    </ul>
+                    <div className="card-body">
+                    {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                      <button className="btn btn-primary btn-buy" type="button">
+                          Buy
+                      </button>
+                      <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
+                        Buyer Info
+                      </button>
+                    </div>
+                  </div>
                   
                 </div>)
               })

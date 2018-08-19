@@ -1,6 +1,7 @@
 [{
         "id": 0,
         "type": "Turbin Engine",
+        "note": "A gas turbine, also called a combustion turbine, is a type of continuous combustion, internal combustion engine. There are three main components",
         "picture": "images/turbine-engine.jpg",
         "area": "85A/59",
         "price": 1.23
@@ -8,6 +9,7 @@
     {
         "id": 1,
         "type": "Turbofan Engine",
+        "note": "The turbofan or fanjet is a type of airbreathing jet engine that is widely used in aircraft propulsion of turbine and fan: the turbo portion",
         "picture": "images/turbofan-engine.jpg",
         "area": "115/76",
         "price": 1.56
@@ -15,6 +17,7 @@
     {
         "id": 2,
         "type": "Wankel Engine",
+        "note": "The Wankel engine is a type of internal combustion engine using an eccentric rotary design to convert pressure into rotating motion",
         "picture": "images/wankel-engine.jpg",
         "area": "204/72",
         "price": 2.74
@@ -60,12 +63,5 @@
         "picture": "images/wankel-engine.jpg",
         "area": "111B/84",
         "price": 1.32
-    },
-    {
-        "id": 9,
-        "type": "Turbin Engine",
-        "picture": "images/turbine-engine.jpg",
-        "area": "75/61",
-        "price": 1.11
     }
 ]
