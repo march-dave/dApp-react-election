@@ -13,19 +13,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
-// import Modal from 'js/container/Modal.js';
-import Modal from './container/Modal.js'
-
 import ProductCarousel from './container/ProductCarousel.js'
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleModalShowClick = this.handleModalShowClick.bind(this);
-    this.handleModalCloseClick = this.handleModalCloseClick.bind(this);
+    super(props);
     this.state = {
-      showModal: false,
-    }
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
     
     // this.state = {
     //   account: '0x0',
@@ -50,19 +48,11 @@ class App extends React.Component {
     // this.watchEvents = this.watchEvents.bind(this)
   }
 
-  handleModalShowClick(e) {
-    e.preventDefault();
+  toggle() {
     this.setState({
-      showModal: true
-    })
+      modal: !this.state.modal
+    });
   }
-
-  handleModalCloseClick() {
-    this.setState({
-      showModal: false
-    })
-  }
-
 
   componentDidMount() {
     // TODO: Refactor with promise chain
@@ -109,7 +99,6 @@ class App extends React.Component {
   }
 
   render() {
-    const { showModal } = this.state;
     return (
       <div className="container-fluid">
 
@@ -147,12 +136,21 @@ class App extends React.Component {
                           Buy
                       </button>
 
-                      <button type="button" className="btn btn-primary" onClick={this.handleModalShowClick}>Show Modal</button>
-                      {showModal ? (<Modal handleModalCloseClick={this.handleModalCloseClick} />) : null}
+                      <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}
+                      Buy
+                      </Button>
+                      <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                        <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                        <ModalBody>
+                          Lorem ipsum dolor sit amet
+                        </ModalBody>
+                        <ModalFooter>
+                          <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+                          <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                        </ModalFooter>
+                      </Modal>
 
-                      <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
-                        Buyer Info
-                      </button>
+
                     </div>
                   </div>
                   
