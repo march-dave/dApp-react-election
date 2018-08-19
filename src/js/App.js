@@ -13,12 +13,20 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
+// import Modal from 'js/container/Modal.js';
+import Modal from './container/Modal.js'
 
 import ProductCarousel from './container/ProductCarousel.js'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
+    this.handleModalShowClick = this.handleModalShowClick.bind(this);
+    this.handleModalCloseClick = this.handleModalCloseClick.bind(this);
+    this.state = {
+      showModal: false,
+    }
+    
     // this.state = {
     //   account: '0x0',
     //   candidates: [],
@@ -41,6 +49,20 @@ class App extends React.Component {
     // this.castVote = this.castVote.bind(this)
     // this.watchEvents = this.watchEvents.bind(this)
   }
+
+  handleModalShowClick(e) {
+    e.preventDefault();
+    this.setState({
+      showModal: true
+    })
+  }
+
+  handleModalCloseClick() {
+    this.setState({
+      showModal: false
+    })
+  }
+
 
   componentDidMount() {
     // TODO: Refactor with promise chain
@@ -87,6 +109,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { showModal } = this.state;
     return (
       <div className="container-fluid">
 
@@ -110,15 +133,6 @@ class App extends React.Component {
                 return (
                 <div className="col-sm-4 card-body">
                   <img className="card-img-top"  src={i.picture} width="240"/>
-                  {/* <strong>Type: </strong><span>{i.type}</span> */}
-                  {/* <strong>Price: </strong><span>{i.price}</span> */}
-                  {/* <strong>Area: </strong><span>{i.area}</span> */}
-                  {/* <button className="btn btn-info btn-buy" type="button">
-                      Buy
-                  </button>
-                  <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
-                    Buyer Info
-                  </button> */}
 
                   <div className="card-body">
                     <h5 className="card-title">{i.type}</h5>
@@ -129,10 +143,13 @@ class App extends React.Component {
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
                     <div className="card-body">
-                    {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-                      <button className="btn btn-primary btn-buy" type="button">
+                      <button className="btn btn-primary btn-buy" type="button" data-toggle="modal" data-target="#buyModal">
                           Buy
                       </button>
+
+                      <button type="button" className="btn btn-primary" onClick={this.handleModalShowClick}>Show Modal</button>
+                      {showModal ? (<Modal handleModalCloseClick={this.handleModalCloseClick} />) : null}
+
                       <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
                         Buyer Info
                       </button>
@@ -143,6 +160,27 @@ class App extends React.Component {
               })
             }
         </div>
+
+         {/* <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 className="modal-title">Buyer Info</h4>
+                    </div>
+                    <div className="modal-body">
+                        <input type="hidden" id="id" />
+                        <input type="hidden" id="price" />
+                        <input type="text" className="form-control" id="name" placeholder="Name" /><br/>
+                        <input type="number" className="form-control" id="age" placeholder="Age" />
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary" onclick="App.buyRealEstate(); return false;">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div> */}
 
         <div className="row">
           <div className="col-sm">
