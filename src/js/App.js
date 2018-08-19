@@ -103,11 +103,31 @@ class App extends React.Component {
         </div>
 
         {/* <div className="row"><ProductCarousel/></div> */}
-
+      
         <div className="row">
             {
               data.map( i => {
-                return (<div className="col-sm-4"> {i.type} - {i.price} <img src={i.picture} height="210" width="210"/> </div>)
+                return (
+                <div className="col-sm-4 border rounded-top">
+                  <img src={i.picture} height="150" width="150"/>
+                  <br />
+                  <strong>ID: </strong><span>{i.id}</span><br />
+                  <strong>Type: </strong><span>{i.type}</span><br />
+                  <strong>Price: </strong><span>{i.price}</span><br />
+                  <strong>Area: </strong><span>{i.area}</span><br />
+                  <button className="btn btn-info btn-buy" type="button">
+                    Buy
+                  </button>
+                  <button className="btn btn-info btn-buyerInfo" type="button"  style="display: none;">
+                    Buyer Info
+                  </button>
+                  {/* <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">
+                    Buy
+                  </button>
+                    <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style="display: none;">
+                    Buyer Info
+                  </button> */}
+                </div>)
               })
             }
         </div>

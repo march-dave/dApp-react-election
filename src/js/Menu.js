@@ -4,7 +4,7 @@ class Menu extends Component {
     render() {
         return (
             <div>
-                <ul className="nav" style={{marginTop: "7px;"}}>
+                <ul className="nav">
                     <li className="nav-item"><Link to="/container/DBPlatform" className="nav-link">DB Platform</Link></li>
                     <li className="nav-item"><Link to="/container/ReverseAuction" className="nav-link">Reverse Auction</Link></li>
                     <li className="nav-item"><Link to="/container/MarketPlace" className="nav-link">Market Place</Link></li>
