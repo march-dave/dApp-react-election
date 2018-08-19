@@ -118,15 +118,10 @@ class App extends React.Component {
                   <button className="btn btn-info btn-buy" type="button">
                     Buy
                   </button>
-                  <button className="btn btn-info btn-buyerInfo" type="button"  style="display: none;">
+                  <button className="btn btn-info btn-buyerInfo" type="button" style={{display: "none"}}>
                     Buyer Info
                   </button>
-                  {/* <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">
-                    Buy
-                  </button>
-                    <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style="display: none;">
-                    Buyer Info
-                  </button> */}
+                  
                 </div>)
               })
             }
