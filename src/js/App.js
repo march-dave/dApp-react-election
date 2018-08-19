@@ -90,7 +90,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
 
-        <div className="row" style={{background: "#333"}}>
+        <div className="row" style={{background: "#333", height: "37px", color: "#FFF" }}>
           <div className="col-sm">
             Logo
           </div>
