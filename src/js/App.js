@@ -7,20 +7,22 @@ import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
-// import {Table, Row, Grid, Col, Button, Form } from 'react-bootstrap';
+// import {Table, Input, Row, Grid, Col, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
 import ProductCarousel from './container/ProductCarousel.js'
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      id: 0,
+      price: 1.1
     };
 
     this.toggle = this.toggle.bind(this);
@@ -48,7 +50,9 @@ class App extends React.Component {
     // this.watchEvents = this.watchEvents.bind(this)
   }
 
-  toggle() {
+  toggle(e) {
+    // console.log("toggle");
+    // console.log(e.target);
     this.setState({
       modal: !this.state.modal
     });
@@ -132,18 +136,20 @@ class App extends React.Component {
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
                     <div className="card-body">
-                      <button className="btn btn-primary btn-buy" type="button" data-toggle="modal" data-target="#buyModal">
-                          Buy
-                      </button>
 
                       <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}
                       Buy
                       </Button>
                       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                        <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                        <ModalHeader toggle={this.toggle}>Buyer Info</ModalHeader>
                         <ModalBody>
-                          Lorem ipsum dolor sit amet
+                          {i.id} {i.price}
+                          <Input type="hidden" id={i.id} />
+                          <Input type="hidden" id={i.price} />
+                          <Input id="name" placeholder="Name" /><br/>
+                          <Input id="age" placeholder="Age" /> 
                         </ModalBody>
+
                         <ModalFooter>
                           <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
                           <Button color="secondary" onClick={this.toggle}>Cancel</Button>
