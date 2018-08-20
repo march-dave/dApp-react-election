@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
+// import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.css'
 
-class Modal extends React.Component {
+class BModal extends React.Component {
     constructor(props) {
       super(props);
       this.handleCloseClick = this.handleCloseClick.bind(this);
     }
 
     componentDidMount() {
-    const { handleModalCloseClick } = this.props;
-        $(this.modal).modal('show');
-        $(this.modal).on('hidden.bs.modal', handleModalCloseClick);
+    // const { handleModalCloseClick } = this.props;
+    //     $(this.modal).modal('show');
+    //     $(this.modal).on('hidden.bs.modal', handleModalCloseClick);
     }
     handleCloseClick() {
-      const { handleModalCloseClick } = this.props;
-      $(this.modal).modal('hide');
-      handleModalCloseClick();
+      // const { handleModalCloseClick } = this.props;
+      // $(this.modal).modal('hide');
+      // handleModalCloseClick();
     }
     render() {
       return (
@@ -45,4 +45,4 @@ class Modal extends React.Component {
     }
   }
 
-export default Modal;
+export default BModal;

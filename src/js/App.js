@@ -135,8 +135,10 @@ class App extends React.Component {
                       <li className="list-group-item">Price: {i.price}</li>
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
-                    <div className="card-body">
 
+                     <button class="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">Buy</button>
+
+                    {/* <div className="card-body">
                       <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}
                       Buy
                       </Button>
@@ -155,9 +157,8 @@ class App extends React.Component {
                           <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                       </Modal>
+                    </div> */}
 
-
-                    </div>
                   </div>
                   
                 </div>)
@@ -165,7 +166,7 @@ class App extends React.Component {
             }
         </div>
 
-         {/* <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
+         <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -184,7 +185,7 @@ class App extends React.Component {
                     </div>
                 </div>
             </div>
-        </div> */}
+        </div>
 
         <div className="row">
           <div className="col-sm">
