@@ -7,13 +7,22 @@ class BModal extends React.Component {
     constructor(props) {
       super(props);
       this.handleCloseClick = this.handleCloseClick.bind(this);
+
+      this.handleShowBsCollapse = this.handleShowBsCollapse.bind(this)
     }
 
     componentDidMount() {
-    // const { handleModalCloseClick } = this.props;
-    //     $(this.modal).modal('show');
-    //     $(this.modal).on('hidden.bs.modal', handleModalCloseClick);
+      this.myShowCollapse.addEventListener('show.bs.collapse', this.handleShowBsCollapse)
     }
+
+    componentWillUnmount() {
+      this.myShowCollapse.removeEventListener('show.bs.collapse', this.handleShowBsCollapse)
+    }
+
+    handleShowBsCollapse(event) {
+      console.log('handleShowBsCollapse event' + event);
+    }
+
     handleCloseClick() {
       // const { handleModalCloseClick } = this.props;
       // $(this.modal).modal('hide');

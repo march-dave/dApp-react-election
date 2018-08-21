@@ -27,6 +27,8 @@ class App extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
+
+    this.handleShowBsCollapse = this.handleShowBsCollapse.bind(this);
     
     // this.state = {
     //   account: '0x0',
@@ -84,6 +86,12 @@ class App extends React.Component {
         })
       })
     })
+
+    this.myShowCollapse.addEventListener('show.bs.collapse', this.handleShowBsCollapse)
+  }
+
+  componentWillUnmount() {
+    this.myShowCollapse.removeEventListener('show.bs.collapse', this.handleShowBsCollapse)
   }
 
   watchEvents() {
