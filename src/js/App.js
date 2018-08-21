@@ -9,6 +9,7 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 import data from '../data.json';
 // import {Table, Input, Row, Grid, Col, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap/dist/js/bootstrap.js";
 // import 'bootstrap'
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
@@ -135,9 +136,10 @@ class App extends React.Component {
                       <li className="list-group-item">Price: {i.price}</li>
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
-
-                     <button class="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">Buy</button>
-
+                  
+                    <div className="card-body">
+                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">Buy</button>
+                    </div>
                     {/* <div className="card-body">
                       <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}
                       Buy
@@ -166,7 +168,7 @@ class App extends React.Component {
             }
         </div>
 
-         <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
+        <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
