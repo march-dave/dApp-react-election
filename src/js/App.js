@@ -87,11 +87,11 @@ class App extends React.Component {
       })
     })
 
-    this.myShowCollapse.addEventListener('show.bs.collapse', this.handleShowBsCollapse)
+    // this.myShowCollapse.addEventListener('show.bs.collapse', this.handleShowBsCollapse)
   }
 
   componentWillUnmount() {
-    this.myShowCollapse.removeEventListener('show.bs.collapse', this.handleShowBsCollapse)
+    // this.myShowCollapse.removeEventListener('show.bs.collapse', this.handleShowBsCollapse)
   }
 
   watchEvents() {
