@@ -28,7 +28,7 @@ class App extends React.Component {
 
     this.toggle = this.toggle.bind(this);
 
-    this.handleShowBsCollapse = this.handleShowBsCollapse.bind(this);
+    // this.handleShowBsCollapse = this.handleShowBsCollapse.bind(this);
     
     // this.state = {
     //   account: '0x0',
@@ -87,7 +87,7 @@ class App extends React.Component {
       })
     })
 
-    // this.myShowCollapse.addEventListener('show.bs.collapse', this.handleShowBsCollapse)
+    // this.myShowCollapse.addEventListener('show.bs.modal', this.handleShowBsCollapse)
   }
 
   componentWillUnmount() {
@@ -176,7 +176,7 @@ class App extends React.Component {
             }
         </div>
 
-        <div className="modal fade" tabindex="-1" role="dialog" id="buyModal">
+        <div className="modal fade" role="dialog" id="buyModal">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -191,7 +191,7 @@ class App extends React.Component {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onclick="App.buyRealEstate(); return false;">Submit</button>
+                        <button type="button" className="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
