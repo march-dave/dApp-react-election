@@ -14,6 +14,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
+import $ from 'jquery';
 import ProductCarousel from './container/ProductCarousel.js'
 import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
@@ -87,7 +88,11 @@ class App extends React.Component {
       })
     })
 
-    // this.myShowCollapse.addEventListener('show.bs.modal', this.handleShowBsCollapse)
+    $(this.modalBox).on('show.bs.modal', e => {
+      
+      this.hiddenId.value = e.relatedTarget.value;
+      
+    });
   }
 
   componentWillUnmount() {
@@ -146,29 +151,8 @@ class App extends React.Component {
                     </ul>
                   
                     <div className="card-body">
-                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal">Buy</button>
+                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={i.id}>Buy</button>
                     </div>
-                    {/* <div className="card-body">
-                      <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}
-                      Buy
-                      </Button>
-                      <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                        <ModalHeader toggle={this.toggle}>Buyer Info</ModalHeader>
-                        <ModalBody>
-                          {i.id} {i.price}
-                          <Input type="hidden" id={i.id} />
-                          <Input type="hidden" id={i.price} />
-                          <Input id="name" placeholder="Name" /><br/>
-                          <Input id="age" placeholder="Age" /> 
-                        </ModalBody>
-
-                        <ModalFooter>
-                          <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                          <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                      </Modal>
-                    </div> */}
-
                   </div>
                   
                 </div>)
@@ -176,7 +160,7 @@ class App extends React.Component {
             }
         </div>
 
-        <div className="modal fade" role="dialog" id="buyModal">
+        <div className="modal fade" role="dialog" id="buyModal" ref={box => this.modalBox = box}>
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -185,8 +169,8 @@ class App extends React.Component {
                     </div>
                     <div className="modal-body">
                         <input type="hidden" id="id" />
-                        <input type="hidden" id="price" />
-                        <input type="text" className="form-control" id="name" placeholder="Name" /><br/>
+                        <input type="hidden" id="price" ref={price => this.hiddenPrice = price} />
+                        <input type="text" className="form-control" id="name" placeholder="Name" ref={id => this.hiddenId = id} /><br/>
                         <input type="number" className="form-control" id="age" placeholder="Age" />
                     </div>
                     <div className="modal-footer">
