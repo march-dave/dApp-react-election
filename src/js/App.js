@@ -87,7 +87,7 @@ class App extends React.Component {
       this.hiddenId.value = e.relatedTarget.value;
 
       // let t = $(e.relatedTarget).parent().find('.id').text();
-      console.log(e.relatedTarget);
+      console.log(e.relatedTarget.parentElement.parentNode);
     });
   }
 
