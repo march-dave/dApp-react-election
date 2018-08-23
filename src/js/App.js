@@ -88,6 +88,8 @@ class App extends React.Component {
 
       // let t = $(e.relatedTarget).parent().find('.id').text();
       console.log(e.relatedTarget.parentElement.parentNode);
+
+      // parentElement
     });
   }
 
