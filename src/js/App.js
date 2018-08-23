@@ -86,10 +86,11 @@ class App extends React.Component {
     $(this.modalBox).on('show.bs.modal', e => {
       this.hiddenId.value = e.relatedTarget.value;
 
-      // let t = $(e.relatedTarget).parent().find('.id').text();
-      console.log(e.relatedTarget.parentElement.parentNode);
+      let id =  $(e.relatedTarget).parent().parent().find('.id').text();
+      let price = $(e.relatedTarget).parent().parent().find('.price').text();
 
-      // parentElement
+      $(e.currentTarget).find('#id').val(id);
+      $(e.currentTarget).find('#price').val(price);
     });
   }
 
@@ -142,8 +143,8 @@ class App extends React.Component {
                     <h5 className="card-title">{i.type}</h5>
                     <p className="card-text">{i.note}</p>
                     <ul className="list-group list-group-flush">
-                      <li className="list-group-item id" >ID: {i.id}</li>
-                      <li className="list-group-item price">Price: {i.price}</li>
+                      <li className="list-group-item">ID: <span className="id">{i.id}</span></li>
+                      <li className="list-group-item price">Price: <span className="price">{i.price}</span></li>
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
                   
