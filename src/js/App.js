@@ -37,13 +37,15 @@ class App extends React.Component {
     if (typeof web3 != 'undefined') {
       this.web3Provider = web3.currentProvider
     } else {
-      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545')
+      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545')
     }
 
     this.web3 = new Web3(this.web3Provider)
 
     this.contracts = TruffleContract(RealEstate)
     this.contracts.setProvider(this.web3Provider)
+
+    console.log('this.web3Provider: ' + this.web3Provider );
 
     // this.castVote = this.castVote.bind(this)
     // this.watchEvents = this.watchEvents.bind(this)
@@ -124,9 +126,13 @@ class App extends React.Component {
       }
 
       let account = accounts[0];
-
-      this.contracts.deployed().then( (instance) => {
-        let nameUtf8Encoded = utf8.encode(name);
+      console.log('account: ' + account);
+      // console.log('this.contracts.deployed(): ' + this.contracts.deployed());
+      
+        this.contracts.deployed().then( (instance) => {
+        console.log('instance: ' + instance);
+        // let nameUtf8Encoded = utf8.encode(name);
+        let nameUtf8Encoded = name;
         return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
         $('#name').val('');
