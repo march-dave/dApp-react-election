@@ -116,7 +116,33 @@ class App extends React.Component {
   buyRealEstate = () => {
     console.log('buyRealEstate');
 
-    return false;
+    let id = $('#id').val();
+    let name = $('#name').val();
+    let price = $('#price').val();
+    let age = $('#age').val();
+
+    $('#buyModal').modal('hide');
+
+    this.web3.eth.getAccounts( (error, accounts) => {
+      if (error) {
+        console.log(error);
+      }
+
+
+
+    //   let account = accounts[0];
+    //   App.contracts.RealEstate.deployed().then(function(instance) {
+    //     var nameUtf8Encoded = utf8.encode(name);
+    //     return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
+    //   }).then(function() {
+    //     $('#name').val('');
+    //     $('#age').val('');
+    //     $('#buyModal').modal('hide');  
+    //   }).catch(function(err) {
+    //     console.log(err.message);
+    //   });
+    });
+    
   }
 
   watchEvents() {
