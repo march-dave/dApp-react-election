@@ -51,13 +51,28 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    $(this.modalBox).on('show.bs.modal', e => {
-      this.hiddenId.value = e.relatedTarget.value;
+    $(this.buyModalBox).on('show.bs.modal', e => {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let price = $(e.relatedTarget).parent().parent().find('.price').text();
 
       $(e.currentTarget).find('#id').val(id);
       $(e.currentTarget).find('#price').val(price);
+    });
+
+    $(this.buyerInfoModal).on('show.bs.modal', e => {
+      let id =  $(e.relatedTarget).parent().parent().find('.id').text();
+      
+      this.realEstate.deployed().then(function(instance) {
+        return instance.getBuyerInfo.call(id);
+      }).then(function(buyerInfo) {
+        $(e.currentTarget).find('#buyerAddress').text(buyerInfo[0]);
+        $(e.currentTarget).find('#buyerName').text(web3.toUtf8(buyerInfo[1]));
+        $(e.currentTarget).find('#buyerAge').text(buyerInfo[2]);
+      }).catch(function(err) {
+        console.log(err.message);
+      })
+
+
     });
 
     // TODO: Refactor with promise chain
@@ -93,11 +108,15 @@ class App extends React.Component {
       if (error) console.log(error);
       
     });
-
-    
   }
 
   componentWillUnmount() {
+  }
+
+  buyRealEstate = () => {
+    console.log('buyRealEstate');
+
+    return false;
   }
 
   watchEvents() {
@@ -153,7 +172,7 @@ class App extends React.Component {
                   
                     <div className="card-body">
                      <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={i.id}>Buy</button>
-                     <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style="display: none;">
+                     <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style={{display: "normal"}}>
                       Buyer Info
                     </button>
                     </div>
@@ -164,7 +183,7 @@ class App extends React.Component {
             }
         </div>
 
-        <div className="modal fade" role="dialog" id="buyModal" ref={box => this.modalBox = box}>
+        <div className="modal fade" role="dialog" id="buyModal" ref={box => this.buyModalBox = box}>
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -173,19 +192,19 @@ class App extends React.Component {
                     </div>
                     <div className="modal-body">
                         <input type="hidden" id="id" />
-                        <input type="hidden" id="price" ref={price => this.hiddenPrice = price} />
-                        <input type="text" className="form-control" id="name" placeholder="Name" ref={id => this.hiddenId = id} /><br/>
+                        <input type="hidden" id="price" />
+                        <input type="text" className="form-control" id="name" placeholder="Name" /><br/>
                         <input type="number" className="form-control" id="age" placeholder="Age" />
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onClick={this.buyRealEstate}>Submit</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div className="modal fade" role="dialog" id="buyerInfoModal">
+        <div className="modal fade" role="dialog" id="buyerInfoModal" ref={box => this.buyerInfoModal = box}>
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
