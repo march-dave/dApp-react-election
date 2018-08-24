@@ -42,8 +42,8 @@ class App extends React.Component {
 
     this.web3 = new Web3(this.web3Provider)
 
-    this.realEstate = TruffleContract(RealEstate)
-    this.realEstate.setProvider(this.web3Provider)
+    this.contracts = TruffleContract(RealEstate)
+    this.contracts.setProvider(this.web3Provider)
 
     // this.castVote = this.castVote.bind(this)
     // this.watchEvents = this.watchEvents.bind(this)
@@ -62,17 +62,15 @@ class App extends React.Component {
     $(this.buyerInfoModal).on('show.bs.modal', e => {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       
-      this.realEstate.deployed().then(function(instance) {
+      this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
-      }).then(function(buyerInfo) {
+      }).then( buyerInfo => {
         $(e.currentTarget).find('#buyerAddress').text(buyerInfo[0]);
         $(e.currentTarget).find('#buyerName').text(web3.toUtf8(buyerInfo[1]));
         $(e.currentTarget).find('#buyerAge').text(buyerInfo[2]);
-      }).catch(function(err) {
+      }).catch( err => {
         console.log(err.message);
       })
-
-
     });
 
     // TODO: Refactor with promise chain
@@ -104,7 +102,7 @@ class App extends React.Component {
     //   })
     // })
 
-    web3.eth.getAccounts( (error, accounts) => {
+    this.web3.eth.getAccounts( (error, accounts) => {
       if (error) console.log(error);
       
     });
@@ -114,23 +112,30 @@ class App extends React.Component {
   }
 
   buyRealEstate = () => {
-    console.log('buyRealEstate');
 
     let id = $('#id').val();
     let name = $('#name').val();
     let price = $('#price').val();
     let age = $('#age').val();
 
-    $('#buyModal').modal('hide');
-
     this.web3.eth.getAccounts( (error, accounts) => {
       if (error) {
         console.log(error);
       }
 
+      let account = accounts[0];
 
+      this.contracts.deployed().then( (instance) => {
+        let nameUtf8Encoded = utf8.encode(name);
+        return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
+      }).then( () => {
+        $('#name').val('');
+        $('#age').val('');
+        $('#buyModal').modal('hide');  
+      }).catch( err => {
+        console.log(err.message);
+      } );
 
-    //   let account = accounts[0];
     //   App.contracts.RealEstate.deployed().then(function(instance) {
     //     var nameUtf8Encoded = utf8.encode(name);
     //     return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
