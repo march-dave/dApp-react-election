@@ -89,6 +89,9 @@ class App extends React.Component {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let price = $(e.relatedTarget).parent().parent().find('.price').text();
 
+      console.log(id);
+      console.log(price);
+
       $(e.currentTarget).find('#id').val(id);
       $(e.currentTarget).find('#price').val(price);
     });
@@ -144,7 +147,7 @@ class App extends React.Component {
                     <p className="card-text">{i.note}</p>
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">ID: <span className="id">{i.id}</span></li>
-                      <li className="list-group-item price">Price: <span className="price">{i.price}</span></li>
+                      <li className="list-group-item">Price: <span className="price">{i.price}</span></li>
                       <li className="list-group-item">Area: {i.area}</li>
                     </ul>
                   
@@ -189,7 +192,6 @@ class App extends React.Component {
               </div> */}
             </div>
           </div>
-          
 
           <div className="col-sm">
             <div className="dropdown">
@@ -216,7 +218,6 @@ class App extends React.Component {
                 </div>
               </div>
           </div>
-
         </div>
 
         <div className="row">
