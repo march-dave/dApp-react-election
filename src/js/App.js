@@ -21,7 +21,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      // modal: false,
       id: 0,
       price: 1.1
     };
@@ -50,28 +50,25 @@ class App extends React.Component {
     // this.watchEvents = this.watchEvents.bind(this)
   }
 
-  // toggle(e) {
-  //   this.setState({
-  //     modal: !this.state.modal
-  //   });
-  // }
-
   componentDidMount() {
     // TODO: Refactor with promise chain
     web3.eth.getCoinbase((err, account) => {
+      
       this.setState({ account })
+      
       this.election.deployed().then((electionInstance) => {
         this.electionInstance = electionInstance
-        this.watchEvents()
+        // this.watchEvents()
+
         this.electionInstance.candidatesCount().then((candidatesCount) => {
           for (var i = 1; i <= candidatesCount; i++) {
             this.electionInstance.candidates(i).then((candidate) => {
-              const candidates = [...this.state.candidates]
-              candidates.push({
-                id: candidate[0],
-                name: candidate[1],
-                voteCount: candidate[2]
-              });
+              // const candidates = [...this.state.candidates]
+              // candidates.push({
+              //   id: candidate[0],
+              //   name: candidate[1],
+              //   voteCount: candidate[2]
+              // });
               this.setState({ candidates: candidates })
             });
           }
@@ -85,12 +82,8 @@ class App extends React.Component {
 
     $(this.modalBox).on('show.bs.modal', e => {
       this.hiddenId.value = e.relatedTarget.value;
-
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let price = $(e.relatedTarget).parent().parent().find('.price').text();
-
-      console.log(id);
-      console.log(price);
 
       $(e.currentTarget).find('#id').val(id);
       $(e.currentTarget).find('#price').val(price);
