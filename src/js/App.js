@@ -22,11 +22,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       // modal: false,
-      id: 0,
-      price: 1.1
+      // id: 0,
+      // price: 1.1
     };
 
-    // this.toggle = this.toggle.bind(this);
     // this.state = {
     //   account: '0x0',
     //   candidates: [],
@@ -51,34 +50,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // TODO: Refactor with promise chain
-    web3.eth.getCoinbase((err, account) => {
-      
-      this.setState({ account })
-      
-      this.election.deployed().then((electionInstance) => {
-        this.electionInstance = electionInstance
-        // this.watchEvents()
-
-        this.electionInstance.candidatesCount().then((candidatesCount) => {
-          for (var i = 1; i <= candidatesCount; i++) {
-            this.electionInstance.candidates(i).then((candidate) => {
-              // const candidates = [...this.state.candidates]
-              // candidates.push({
-              //   id: candidate[0],
-              //   name: candidate[1],
-              //   voteCount: candidate[2]
-              // });
-              this.setState({ candidates: candidates })
-            });
-          }
-        })
-
-        this.electionInstance.voters(this.state.account).then((hasVoted) => {
-          this.setState({ hasVoted, loading: false })
-        })
-      })
-    })
 
     $(this.modalBox).on('show.bs.modal', e => {
       this.hiddenId.value = e.relatedTarget.value;
@@ -88,6 +59,42 @@ class App extends React.Component {
       $(e.currentTarget).find('#id').val(id);
       $(e.currentTarget).find('#price').val(price);
     });
+
+    // TODO: Refactor with promise chain
+    // web3.eth.getCoinbase((err, account) => {
+      
+    //   this.setState({ account })
+      
+    //   this.election.deployed().then((electionInstance) => {
+    //     this.electionInstance = electionInstance
+    //     this.watchEvents()
+
+    //     this.electionInstance.candidatesCount().then((candidatesCount) => {
+    //       for (var i = 1; i <= candidatesCount; i++) {
+    //         this.electionInstance.candidates(i).then((candidate) => {
+    //           const candidates = [...this.state.candidates]
+    //           candidates.push({
+    //             id: candidate[0],
+    //             name: candidate[1],
+    //             voteCount: candidate[2]
+    //           });
+    //           this.setState({ candidates: candidates })
+    //         });
+    //       }
+    //     })
+
+    //     this.electionInstance.voters(this.state.account).then((hasVoted) => {
+    //       this.setState({ hasVoted, loading: false })
+    //     })
+    //   })
+    // })
+
+    web3.eth.getAccounts( (error, accounts) => {
+      if (error) console.log(error);
+      
+    });
+
+    
   }
 
   componentWillUnmount() {
@@ -133,7 +140,7 @@ class App extends React.Component {
               data.map( i => {
                 return (
                 <div className="col-sm-4 card-body">
-                  <img className="card-img-top"  src={i.picture} width="240"/>
+                  <img className="card-img-top" src={i.picture} width="240"/>
 
                   <div className="card-body">
                     <h5 className="card-title">{i.type}</h5>
@@ -146,6 +153,9 @@ class App extends React.Component {
                   
                     <div className="card-body">
                      <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={i.id}>Buy</button>
+                     <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style="display: none;">
+                      Buyer Info
+                    </button>
                     </div>
                   </div>
                   
@@ -170,6 +180,25 @@ class App extends React.Component {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="button" className="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div className="modal fade" role="dialog" id="buyerInfoModal">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 className="modal-title">Buyer Info</h4>
+                    </div>
+                    <div className="modal-body">
+                        <strong>Account Info</strong>: <span id="buyerAddress"></span><br/>
+                        <strong>Name</strong>: <span id="buyerName"></span><br/>
+                        <strong>Age</strong>: <span id="buyerAge"></span><br/>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
