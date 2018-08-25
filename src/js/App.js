@@ -118,8 +118,7 @@ class App extends React.Component {
     this.contracts.deployed().then(  (instance) => {
       instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
-          $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this house.' + '</p>');
-          console.log('No Errrrr');
+          $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
         } else {
           console.error(error);
         } 
