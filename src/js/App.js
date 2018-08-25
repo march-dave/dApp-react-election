@@ -17,7 +17,6 @@ import $ from 'jquery';
 import utf8 from 'utf8';
 import ProductCarousel from './container/ProductCarousel.js'
 import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -46,8 +45,7 @@ class App extends React.Component {
     this.contracts = TruffleContract(RealEstate)
     this.contracts.setProvider(this.web3Provider)
 
-    console.log('this.web3Provider: ' + this.web3Provider );
-
+    // this.listenToEvents = this.listenToEvents.bind(this);
     // this.castVote = this.castVote.bind(this)
     // this.watchEvents = this.watchEvents.bind(this)
   }
@@ -131,7 +129,6 @@ class App extends React.Component {
         this.contracts.deployed().then( (instance) => {
         console.log('instance: ' + instance);
         let nameUtf8Encoded = utf8.encode(name);
-        // let nameUtf8Encoded = name;
         return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
         $('#name').val('');
