@@ -115,17 +115,17 @@ class App extends React.Component {
 
   listenToEvents = () => {
     
-      this.contracts.RealEstate.deployed().then(  (instance) => {
-        instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
-          if (!error) {
-            // $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this house.' + '</p>');
-            console.log('No Errrrr')
-          } else {
-            console.error(error);
-          } 
-          this.loadRealEstates();
-        })
+    this.contracts.deployed().then(  (instance) => {
+      instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
+        if (!error) {
+          $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this house.' + '</p>');
+          console.log('No Errrrr');
+        } else {
+          console.error(error);
+        } 
+        this.loadRealEstates();
       })
+    })
   }
 
   loadRealEstates = () => {
@@ -145,9 +145,9 @@ class App extends React.Component {
       }
 
       let account = accounts[0];
-      console.log('account: ' + account);
+      // console.log('account: ' + account);
         this.contracts.deployed().then( (instance) => {
-        console.log('instance: ' + instance);
+        // console.log('instance: ' + instance);
         let nameUtf8Encoded = utf8.encode(name);
         return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
@@ -192,6 +192,8 @@ class App extends React.Component {
             Login
           </div>
         </div>
+
+        <div id="events"></div>
 
         {/* <div className="row"><ProductCarousel/></div> */}
       
