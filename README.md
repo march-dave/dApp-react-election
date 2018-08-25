@@ -10,4 +10,4 @@ $ npm run start
 ```
 
 ## Deploy to Ropsten Network to use truffle
-truffle migrate --complile-all --reset --network ropsten
+truffle migrate --compile-all --reset --network ropsten
