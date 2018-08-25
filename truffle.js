@@ -1,6 +1,7 @@
 require("dotenv").load();
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = process.env.mnemonic;
+// var mnemonic = process.env.mnemonic;
+
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -13,7 +14,8 @@ module.exports = {
     },
     ropsten: {
       provider: function() {
-          return new HDWalletProvider(mnemonic, process.env.ropsten)
+          // return new HDWalletProvider(mnemonic, process.env.ropsten)
+          
       },
       network_id: '3',
       gas: 4500000,

@@ -14,6 +14,7 @@ import { Route } from 'react-router-dom'
 import '../styles/app.css'
 import Menu from './Menu.js'
 import $ from 'jquery';
+import utf8 from 'utf8';
 import ProductCarousel from './container/ProductCarousel.js'
 import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
@@ -55,7 +56,7 @@ class App extends React.Component {
 
     $(this.buyModalBox).on('show.bs.modal', e => {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
-      let price = $(e.relatedTarget).parent().parent().find('.price').text();
+      let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
 
       $(e.currentTarget).find('#id').val(id);
       $(e.currentTarget).find('#price').val(price);
@@ -127,33 +128,19 @@ class App extends React.Component {
 
       let account = accounts[0];
       console.log('account: ' + account);
-      // console.log('this.contracts.deployed(): ' + this.contracts.deployed());
-      
         this.contracts.deployed().then( (instance) => {
         console.log('instance: ' + instance);
-        // let nameUtf8Encoded = utf8.encode(name);
-        let nameUtf8Encoded = name;
+        let nameUtf8Encoded = utf8.encode(name);
+        // let nameUtf8Encoded = name;
         return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
         $('#name').val('');
         $('#age').val('');
-        $('#buyModal').modal('hide');  
+        $('#buyModal').modal('hide');
       }).catch( err => {
         console.log(err.message);
       } );
-
-    //   App.contracts.RealEstate.deployed().then(function(instance) {
-    //     var nameUtf8Encoded = utf8.encode(name);
-    //     return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
-    //   }).then(function() {
-    //     $('#name').val('');
-    //     $('#age').val('');
-    //     $('#buyModal').modal('hide');  
-    //   }).catch(function(err) {
-    //     console.log(err.message);
-    //   });
     });
-    
   }
 
   watchEvents() {
