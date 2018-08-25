@@ -106,10 +106,30 @@ class App extends React.Component {
     this.web3.eth.getAccounts( (error, accounts) => {
       if (error) console.log(error);
       
+      this.listenToEvents();
     });
   }
 
   componentWillUnmount() {
+  }
+
+  listenToEvents = () => {
+    
+      this.contracts.RealEstate.deployed().then(  (instance) => {
+        instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
+          if (!error) {
+            // $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this house.' + '</p>');
+            console.log('No Errrrr')
+          } else {
+            console.error(error);
+          } 
+          this.loadRealEstates();
+        })
+      })
+  }
+
+  loadRealEstates = () => {
+    console.log('loadRealEstates');
   }
 
   buyRealEstate = () => {
