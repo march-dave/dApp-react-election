@@ -135,8 +135,6 @@ class App extends React.Component {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
           var imgType = $('.panel-realEstate').eq(i).find('img').attr('src').substr(7);
 
-          console.log('imgType: ' + imgType);
-
           switch(imgType) {
             case 'turbine-engine.jpg':
               $('.panel-realEstate').eq(i).find('img').attr('src', 'images/turbine-engine_sold.jpg')
