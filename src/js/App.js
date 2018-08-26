@@ -131,21 +131,21 @@ class App extends React.Component {
     this.contracts.deployed().then( (instance) => {
       return instance.getAllBuyers.call();
     }).then( (buyers) => {
-      for (i = 0; i < buyers.length; i++) {
+      for (let i = 0; i < buyers.length; i++) {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
           var imgType = $('.panel-realEstate').eq(i).find('img').attr('src').substr(7);
 
           console.log('imgType: ' + imgType);
 
           switch(imgType) {
-            case 'apartment.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/apartment_sold.jpg')
+            case 'turbine-engine.jpg':
+              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/turbine-engine_sold.jpg')
               break;
-            case 'townhouse.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/townhouse_sold.jpg')
+            case 'turbofan-engine.jpg':
+              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/turbofan-engine_sold.jpg')
               break;
-            case 'house.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/house_sold.jpg')
+            case 'wankel-engine.jpg':
+              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/wankel-engine_sold.jpg')
               break;
           }
 
