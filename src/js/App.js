@@ -45,7 +45,6 @@ class App extends React.Component {
     this.contracts = TruffleContract(RealEstate)
     this.contracts.setProvider(this.web3Provider)
 
-    // this.listenToEvents = this.listenToEvents.bind(this);
     // this.castVote = this.castVote.bind(this)
     // this.watchEvents = this.watchEvents.bind(this)
   }
