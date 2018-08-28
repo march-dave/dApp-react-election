@@ -65,8 +65,8 @@ class App extends React.Component {
       let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
       // let price = obj[0].price;
 
-      $(e.currentTarget).find('#id').val(id);
-      $(e.currentTarget).find('#price').val(price);
+      // $(e.currentTarget).find('#id').val(id);
+      // $(e.currentTarget).find('#price').val(price);
 
       this.setState( {itemid : id, itemPrice: price})
     });
@@ -269,8 +269,8 @@ class App extends React.Component {
                         <h4 className="modal-title">Buyer Info</h4>
                     </div>
                     <div className="modal-body">
-                        <input type="hidden" id="id" />
-                        <input type="hidden" id="price" />
+                        <input type="hidden" id="id" value={this.state.itemid} />
+                        <input type="hidden" id="price" value={this.state.itemPrice} />
                         <input type="text" className="form-control" id="name" placeholder="Name" /><br/>
                         <input type="number" className="form-control" id="age" placeholder="Age" />
                     </div>
