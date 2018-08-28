@@ -61,8 +61,8 @@ class App extends React.Component {
       data
         .filter( c => { if(c.id == modalId) return c } )
       let id = obj[0].id;
-      let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
-      // let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
+      // let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
+      let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
       // let price = obj[0].price;
 
       $(e.currentTarget).find('#id').val(id);
