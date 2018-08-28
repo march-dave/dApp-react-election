@@ -24,6 +24,8 @@ class App extends React.Component {
       // modal: false,
       // id: 0,
       // price: 1.1
+      itemId: 0,
+      itemPrice: 0
     };
 
     // this.state = {
@@ -52,11 +54,25 @@ class App extends React.Component {
   componentDidMount() {
 
     $(this.buyModalBox).on('show.bs.modal', e => {
-      let id =  $(e.relatedTarget).parent().parent().find('.id').text();
-      let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
 
-      $(e.currentTarget).find('#id').val(id);
-      $(e.currentTarget).find('#price').val(price);
+      // console.log('jjj');
+      // console.log(e.relatedTarget.value);
+
+      // let id =  $(e.relatedTarget).parent().parent().find('.id').text();
+      let id =  e.relatedTarget.value;
+      let obj = 
+      data
+        .filter( c => { if(c.id == id) return c } )
+        
+      let id = obj[0].id;
+      // let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
+      let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
+      // let price = obj[0].price;
+
+      // $(e.currentTarget).find('#id').val(id);
+      // $(e.currentTarget).find('#price').val(price);
+
+      this.setState( {itemid : id, itemPrice: price})
     });
 
     $(this.buyerInfoModal).on('show.bs.modal', e => {
@@ -121,7 +137,7 @@ class App extends React.Component {
         } else {
           console.error(error);
         } 
-        this.loadRealEstates();
+        // this.loadRealEstates();
       })
     })
   }
@@ -222,22 +238,22 @@ class App extends React.Component {
       
         <div className="row">
             {
-              data.map( i => {
+              data.map( c => {
                 return (
                 <div className="col-sm-4 card-body panel-realEstate">
-                  <img className="card-img-top" src={i.picture} width="240"/>
+                  <img className="card-img-top" src={c.picture} width="240"/>
 
                   <div className="card-body">
-                    <h5 className="card-title">{i.type}</h5>
-                    <p className="card-text">{i.note}</p>
+                    <h5 className="card-title">{c.type}</h5>
+                    <p className="card-text">{c.note}</p>
                     <ul className="list-group list-group-flush">
-                      <li className="list-group-item">ID: <span className="id">{i.id}</span></li>
-                      <li className="list-group-item">Price: <span className="price">{i.price}</span></li>
-                      <li className="list-group-item">Area: {i.area}</li>
+                      <li className="list-group-item">ID: <span className="id">{c.id}</span></li>
+                      <li className="list-group-item">Price: <span className="price">{c.price}</span></li>
+                      <li className="list-group-item">Area: {c.area}</li>
                     </ul>
                   
                     <div className="card-body">
-                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={i.id}>Buy</button>
+                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={c.id}>Buy</button>
                      <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style={{display: "normal"}}>
                       Buyer Info
                     </button>
