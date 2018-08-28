@@ -55,22 +55,18 @@ class App extends React.Component {
 
     $(this.buyModalBox).on('show.bs.modal', e => {
 
-      // console.log('jjj');
-      // console.log(e.relatedTarget.value);
-
-      // let id =  $(e.relatedTarget).parent().parent().find('.id').text();
-      let id =  e.relatedTarget.value;
-      let obj = 
-      data
-        .filter( c => { if(c.id == id) return c } )
-        
-      let id = obj[0].id;
-      // let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
-      let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
+      let id =  $(e.relatedTarget).parent().parent().find('.id').text();
+      // let modalId =  e.relatedTarget.value;
+      // let obj = 
+      // data
+      //   .filter( c => { if(c.id == modalId) return c } )
+      // let id = obj[0].id;
+      let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
+      // let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
       // let price = obj[0].price;
 
-      // $(e.currentTarget).find('#id').val(id);
-      // $(e.currentTarget).find('#price').val(price);
+      $(e.currentTarget).find('#id').val(id);
+      $(e.currentTarget).find('#price').val(price);
 
       this.setState( {itemid : id, itemPrice: price})
     });
