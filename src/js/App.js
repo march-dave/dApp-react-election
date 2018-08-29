@@ -67,8 +67,6 @@ class App extends React.Component {
     $(this.buyerInfoModal).on('show.bs.modal', e => {
       // let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let id =  e.relatedTarget.value;
-      // console.log('show: id ' + id);
-      console.log('show e.relatedTarget.value id: ' + e.relatedTarget.value);
       
       this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
