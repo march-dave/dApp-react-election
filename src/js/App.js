@@ -68,7 +68,7 @@ class App extends React.Component {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       // let modalId =  e.relatedTarget.value;
       // console.log('show: id ' + id);
-      console.log('show: ' + e.relatedTarget.value);
+      console.log('show modalId: ' + id);
       
       this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
