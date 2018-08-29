@@ -54,25 +54,21 @@ class App extends React.Component {
   componentDidMount() {
 
     $(this.buyModalBox).on('show.bs.modal', e => {
-
-      // let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let modalId =  e.relatedTarget.value;
       let obj = 
       data
         .filter( c => { if(c.id == modalId) return c } )
       let id = obj[0].id;
-      // let price = this.web3.toWei(parseFloat($(e.relatedTarget).parent().parent().find('.price').text() || 0), "ether");
       let price = this.web3.toWei(parseFloat(obj[0].price || 0), "ether");
-      // let price = obj[0].price;
-
-      // $(e.currentTarget).find('#id').val(id);
-      // $(e.currentTarget).find('#price').val(price);
 
       this.setState( {itemid : id, itemPrice: price})
     });
 
     $(this.buyerInfoModal).on('show.bs.modal', e => {
       let id =  $(e.relatedTarget).parent().parent().find('.id').text();
+      // let modalId =  e.relatedTarget.value;
+      // console.log('show: id ' + id);
+      console.log('show: ' + e.relatedTarget.value);
       
       this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
@@ -250,7 +246,7 @@ class App extends React.Component {
                   
                     <div className="card-body">
                      <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={c.id}>Buy</button>
-                     <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" style={{display: "normal"}}>
+                     <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" value={c.id} style={{display: "normal"}}>
                       Buyer Info
                     </button>
                     </div>
