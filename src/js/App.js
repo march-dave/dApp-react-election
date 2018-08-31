@@ -16,25 +16,17 @@ import Menu from './Menu.js'
 import $ from 'jquery';
 import utf8 from 'utf8';
 import ProductCarousel from './container/ProductCarousel.js'
-import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+// import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // modal: false,
-      // id: 0,
-      // price: 1.1
-      itemId: 0,
-      itemPrice: 0
+      itemid: 0,
+      itemPrice: 0,
+      buyerAddress: '',
+      buyerName: '',
+      buyerAge: ''
     };
-
-    // this.state = {
-    //   account: '0x0',
-    //   candidates: [],
-    //   hasVoted: false,
-    //   loading: true,
-    //   voting: false,
-    // }
 
     if (typeof web3 != 'undefined') {
       this.web3Provider = web3.currentProvider
@@ -71,9 +63,14 @@ class App extends React.Component {
       this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
       }).then( buyerInfo => {
-        $(e.currentTarget).find('#buyerAddress').text(buyerInfo[0]);
-        $(e.currentTarget).find('#buyerName').text(web3.toUtf8(buyerInfo[1]));
-        $(e.currentTarget).find('#buyerAge').text(buyerInfo[2]);
+        // $(e.currentTarget).find('#buyerAddress').text(buyerInfo[0]);
+        // $(e.currentTarget).find('#buyerName').text(web3.toUtf8(buyerInfo[1]));
+        // $(e.currentTarget).find('#buyerAge').text(buyerInfo[2]);
+        this.setState({ 
+          buyerAddress: buyerInfo[0], 
+          buyerName: web3.toUtf8(buyerInfo[1]), 
+          buyerAge: buyerInfo[2] })
+        
       }).catch( err => {
         console.log(err.message);
       })
@@ -284,8 +281,8 @@ class App extends React.Component {
                         <h4 className="modal-title">Buyer Info</h4>
                     </div>
                     <div className="modal-body">
-                        <strong>Account Info</strong>: <span id="buyerAddress"></span><br/>
-                        <strong>Name</strong>: <span id="buyerName"></span><br/>
+                        <strong>Account Info</strong>: <span id="buyerAddress">{this.state.buyerAddress}</span><br/>
+                        <strong>Name</strong>: <span id="buyerName">{this.state.buyerName}</span><br/>
                         <strong>Age</strong>: <span id="buyerAge"></span><br/>
                     </div>
                     <div className="modal-footer">
