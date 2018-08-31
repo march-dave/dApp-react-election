@@ -25,7 +25,7 @@ class App extends React.Component {
       itemPrice: 0,
       buyerAddress: '',
       buyerName: '',
-      buyerAge: 0.00,
+      buyerAge: 0,
     };
 
     if (typeof web3 != 'undefined') {
@@ -285,7 +285,7 @@ class App extends React.Component {
                     <div className="modal-body">
                         <strong>Account Info</strong>: <span id="buyerAddress">{this.state.buyerAddress}</span><br/>
                         <strong>Name</strong>: <span id="buyerName">{this.state.buyerName} </span><br/>
-                        <strong>Age</strong>: <span id="buyerAge"></span><br/>
+                        <strong>Age</strong>: <span id="buyerAge">{this.state.buyerAge}</span><br/>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
