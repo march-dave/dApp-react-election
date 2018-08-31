@@ -25,7 +25,7 @@ class App extends React.Component {
       itemPrice: 0,
       buyerAddress: '',
       buyerName: '',
-      buyerAge: 0,
+      buyerAge: '',
     };
 
     if (typeof web3 != 'undefined') {
@@ -69,7 +69,7 @@ class App extends React.Component {
         this.setState({ 
           buyerAddress: buyerInfo[0], 
           buyerName: web3.toUtf8(buyerInfo[1]), 
-          buyerAge: buyerInfo[2] })
+          buyerAge: buyerInfo[2].toString() })
 
           console.log('buyerAge: ' + this.state.buyerAge);
         
