@@ -25,7 +25,7 @@ class App extends React.Component {
       itemPrice: 0,
       buyerAddress: '',
       buyerName: '',
-      buyerAge: ''
+      buyerAge: 0.00,
     };
 
     if (typeof web3 != 'undefined') {
@@ -70,6 +70,8 @@ class App extends React.Component {
           buyerAddress: buyerInfo[0], 
           buyerName: web3.toUtf8(buyerInfo[1]), 
           buyerAge: buyerInfo[2] })
+
+          console.log('buyerAge: ' + this.state.buyerAge);
         
       }).catch( err => {
         console.log(err.message);
@@ -282,7 +284,7 @@ class App extends React.Component {
                     </div>
                     <div className="modal-body">
                         <strong>Account Info</strong>: <span id="buyerAddress">{this.state.buyerAddress}</span><br/>
-                        <strong>Name</strong>: <span id="buyerName">{this.state.buyerName}</span><br/>
+                        <strong>Name</strong>: <span id="buyerName">{this.state.buyerName} </span><br/>
                         <strong>Age</strong>: <span id="buyerAge"></span><br/>
                     </div>
                     <div className="modal-footer">
