@@ -236,7 +236,7 @@ class App extends React.Component {
               data.map( c => {
                 return (
                 <div className="col-sm-4 card-body panel-realEstate">
-                  <img className="card-img-top" src={c.picture} width="240"/>
+                  <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240"/>
 
                   <div className="card-body">
                     <h5 className="card-title">{c.type}</h5>
