@@ -114,7 +114,7 @@ class App extends React.Component {
     this.contracts.deployed().then(  (instance) => {
       instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
-          $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
+          // $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
 
             this.setState({ 
               events: this.state.events.concat({ 
@@ -122,14 +122,6 @@ class App extends React.Component {
                 id: event.args._id.toString()
               })
             })
-
-            console.log(console.log(JSON.stringify(this.state.events)) )
-
-            this.state.events.map( c => {
-              console.log( c.buyer );
-              console.log( c.id );
-            })
-
         } else {
           console.error(error);
         } 
@@ -167,7 +159,9 @@ class App extends React.Component {
     });
   }
 
-  BuyRealEstate = () => {
+  BuyRealEstate = (e) => {
+
+    // console.log('Buy Real Estate: ' + e. );
 
     let id = $('#id').val();
     let name = $('#name').val();
