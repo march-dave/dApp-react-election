@@ -7,7 +7,6 @@ import TruffleContract from 'truffle-contract'
 import RealEstate from '../../build/contracts/RealEstate.json'
 // import Content from './Content'
 import data from '../data.json';
-// import {Table, Input, Row, Grid, Col, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap/dist/js/bootstrap.js";
 import { Route } from 'react-router-dom'
@@ -16,7 +15,6 @@ import Menu from './Menu.js'
 import $ from 'jquery';
 import utf8 from 'utf8';
 import ProductCarousel from './container/ProductCarousel.js'
-// import {Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -57,7 +55,6 @@ class App extends React.Component {
     });
 
     $(this.buyerInfoModal).on('show.bs.modal', e => {
-      // let id =  $(e.relatedTarget).parent().parent().find('.id').text();
       let id =  e.relatedTarget.value;
       
       this.contracts.deployed().then( instance => {
@@ -277,9 +274,9 @@ class App extends React.Component {
                         <h4 className="modal-title">Buyer Info</h4>
                     </div>
                     <div className="modal-body">
-                        <strong>Account Info</strong>: <span id="buyerAddress">{this.state.buyerAddress}</span><br/>
-                        <strong>Name</strong>: <span id="buyerName">{this.state.buyerName} </span><br/>
-                        <strong>Age</strong>: <span id="buyerAge">{this.state.buyerAge}</span><br/>
+                        <strong>Account Info</strong>: {this.state.buyerAddress} <br/>
+                        <strong>Name</strong>: {this.state.buyerName} <br/>
+                        <strong>Age</strong>: {this.state.buyerAge} <br/>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
