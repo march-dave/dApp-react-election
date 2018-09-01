@@ -119,13 +119,16 @@ class App extends React.Component {
             this.setState({ 
               events: this.state.events.concat({ 
                 buyer: event.args._buyer,
-                id: '11'
+                id: event.args._id.toString()
               })
             })
 
             console.log(console.log(JSON.stringify(this.state.events)) )
 
-            // console.log(event.args._id);
+            this.state.events.map( c => {
+              console.log( c.buyer );
+              console.log( c.id );
+            })
 
         } else {
           console.error(error);
@@ -225,11 +228,12 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div id="events"></div>
-        {/* <div id="events">{this.state.events.map( c => {
-          <div>{c.buyer} From Account # bought this engine.</div>
+        {/* <div id="events"></div> */}
+
+        <div id="events">{this.state.events.map( c => {
+          return (<div>{c.buyer} From Account {c.id} # bought this engine.</div>)
         })}
-        </div> */}
+        </div>
 
         {/* <div className="row"><ProductCarousel/></div> */}
       
