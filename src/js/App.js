@@ -63,16 +63,10 @@ class App extends React.Component {
       this.contracts.deployed().then( instance => {
         return instance.getBuyerInfo.call(id);
       }).then( buyerInfo => {
-        // $(e.currentTarget).find('#buyerAddress').text(buyerInfo[0]);
-        // $(e.currentTarget).find('#buyerName').text(web3.toUtf8(buyerInfo[1]));
-        // $(e.currentTarget).find('#buyerAge').text(buyerInfo[2]);
         this.setState({ 
           buyerAddress: buyerInfo[0], 
           buyerName: web3.toUtf8(buyerInfo[1]), 
           buyerAge: buyerInfo[2].toString() })
-
-          console.log('buyerAge: ' + this.state.buyerAge);
-        
       }).catch( err => {
         console.log(err.message);
       })
