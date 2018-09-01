@@ -24,6 +24,7 @@ class App extends React.Component {
       buyerAddress: '',
       buyerName: '',
       buyerAge: '',
+      events: [ { buyer: '', id: '' }]
     };
 
     if (typeof web3 != 'undefined') {
@@ -113,7 +114,16 @@ class App extends React.Component {
     this.contracts.deployed().then(  (instance) => {
       instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
-          $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
+          // $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
+
+
+            this.setState({ 
+              events: this.state.events.concat({ 
+                buyer: event.args._buyer,
+                // id: event.args_.id.toString()
+              })
+            })
+
         } else {
           console.error(error);
         } 
@@ -212,7 +222,10 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div id="events"></div>
+        <div id="events">{this.state.events.map( c => {
+          <div>{c.buyer} From Account # bought this engine.</div>
+        })}
+        </div>
 
         {/* <div className="row"><ProductCarousel/></div> */}
       
