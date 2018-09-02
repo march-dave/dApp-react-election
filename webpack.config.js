@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'build.js'
+    filename: 'build.js',
   },
   module: {
     rules: [
@@ -29,5 +29,10 @@ module.exports = {
         include: '/build/contracts/'
       }
     ]
+  },
+  optimization: {
+    minimize: true,
+    // splitChunks: {},
+    concatenateModules: true,
   }
 }
