@@ -8,7 +8,7 @@ class Menu extends Component {
                     <li className="nav-item"><Link to="/container/DBPlatform" className="nav-link">DB Platform</Link></li>
                     <li className="nav-item"><Link to="/container/ReverseAuction" className="nav-link">Reverse Auction</Link></li>
                     <li className="nav-item"><Link to="/container/MarketPlace" className="nav-link">Market Place</Link></li>
-                    <li className="nav-item"><Link to="/components/Help" className="nav-link">Help</Link></li>
+                    <li className="nav-item"><Link to="/container/Help" className="nav-link">Help</Link></li>
                 </ul>
             </div>
         );

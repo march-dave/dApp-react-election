@@ -114,8 +114,6 @@ class App extends React.Component {
     this.contracts.deployed().then(  (instance) => {
       instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
-          // $('#events').append('<p>' + event.args._buyer + ' From Account #' + event.args._id + ' bought this engine.' + '</p>');
-
             this.setState({ 
               events: this.state.events.concat({ 
                 buyer: event.args._buyer,
@@ -160,8 +158,6 @@ class App extends React.Component {
   }
 
   BuyRealEstate = (e) => {
-
-    // console.log('Buy Real Estate: ' + e. );
 
     let id = $('#id').val();
     let name = $('#name').val();
@@ -210,19 +206,17 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
 
-        <div className="row" style={{background: "#333", height: "37px", color: "#FFF" }}>
+        <div className="row" style={{background: "#64b5f6", height: "40px", color: "#FFF" }}>
           <div className="col-sm">
-            Logo
+            <img src="images/logo-top.png" style={{  paddingTop: "6px"}} />
           </div>
           <div className="col-sm-8">
-            <Menu />
+            <div style={{ paddingTop: "7px"}}><Menu /></div>
           </div>
           <div className="col-sm">
-            Login
+            {/* Login */}
           </div>
         </div>
-
-        {/* <div id="events"></div> */}
 
         <div id="events">{this.state.events.map( c => {
           return (<div>{c.buyer} From Account {c.id} # bought this engine.</div>)
@@ -248,7 +242,7 @@ class App extends React.Component {
                     </ul>
                   
                     <div className="card-body">
-                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={c.id}>Buy</button>
+                     <button className="btn btn-info btn-buy" type="button" data-toggle="modal" data-target="#buyModal" value={c.id}>Buy</button> &nbsp;
                      <button className="btn btn-info btn-buyerInfo" type="button" data-toggle="modal" data-target="#buyerInfoModal" value={c.id} style={{display: "normal"}}>
                       Buyer Info
                     </button>
