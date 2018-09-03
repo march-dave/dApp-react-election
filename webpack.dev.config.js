@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'production', //'development'
+  mode: 'development',
   entry: path.join(__dirname, 'src/js', 'index.js'),
   devServer: {
     contentBase: path.join(__dirname, 'src'),
   },
-
+  devtool: 'inline-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'build.js'
@@ -30,11 +30,6 @@ module.exports = {
         include: '/build/contracts/'
       }
     ]
-  },
-  optimization: {
-    minimize: true,
-    // splitChunks: {},
-    concatenateModules: true,
-  },
+  }
  
 }
