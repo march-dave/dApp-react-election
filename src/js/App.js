@@ -9,8 +9,15 @@ import RealEstate from '../../build/contracts/RealEstate.json'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap/dist/js/bootstrap.js";
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../styles/app.css'
+import Home from './container/Home';
+import DBPlatform from './container/DBPlatform'; 
+import MarketPlace from './container/MarketPlace';
+import ReverseAuction from './container/ReverseAuction';
+import Help from './container/Help'; 
+
 import Menu from './Menu.js'
 import $ from 'jquery';
 import utf8 from 'utf8';
@@ -211,7 +218,24 @@ class App extends React.Component {
             <img src="images/logo-top.png" style={{  paddingTop: "6px"}} />
           </div>
           <div className="col-sm-8">
-            <div style={{ paddingTop: "7px"}}><Menu /></div>
+            <div style={{ paddingTop: "7px"}}>
+            {/* <Menu /> */}
+            
+            <Router>
+            <div>
+              <Menu />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/container/MarketPlace" component={MarketPlace} />
+                <Route path="/container/DBPlatform" component={DBPlatform} />
+                <Route path="/container/ReverseAuction" component={ReverseAuction} />
+                <Route path="/container/Help" component={Help} />
+                <Route component={Help} />
+              </Switch>
+            </div>
+          </Router>
+            
+            </div>
           </div>
           <div className="col-sm">
             {/* Login */}
@@ -230,7 +254,7 @@ class App extends React.Component {
               data.map( c => {
                 return (
                 <div className="col-sm-4 card-body panel-realEstate">
-                  <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240"/>
+                  <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240" height="150" />
 
                   <div className="card-body">
                     <h5 className="card-title">{c.type}</h5>
