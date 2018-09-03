@@ -6,6 +6,7 @@ module.exports = {
   // devServer: {
   //   contentBase: path.join(__dirname, 'src'),
   // },
+  
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'build.js',
