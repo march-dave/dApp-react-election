@@ -34,5 +34,8 @@ module.exports = {
     minimize: true,
     // splitChunks: {},
     concatenateModules: true,
-  }
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
 }
