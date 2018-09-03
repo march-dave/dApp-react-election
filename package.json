@@ -20,10 +20,7 @@
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
         "css-loader": "^0.28.10",
-        "i": "^0.3.6",
-        "webpack": "^4.0.1",
-        "webpack-cli": "^2.0.9"
-
+        "i": "^0.3.6"
     },
     "dependencies": {
         "babel-runtime": "^6.26.0",
@@ -43,6 +40,8 @@
         "truffle-hdwallet-provider": "0.0.6",
         "utf8": "^3.0.0",
         "web3": "^0.20.5",
+        "webpack": "^4.0.1",
+        "webpack-cli": "^2.0.9",
         "webpack-dev-server": "^3.0.0"
     }
 }
