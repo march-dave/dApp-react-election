@@ -7,8 +7,7 @@
         "test": "test"
     },
     "scripts": {
-        "start": "npm run prod",
-        "prod": "lite-server",
+
         "build": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -32,7 +31,6 @@
         "dotenv": "^6.0.0",
         "jquery": "^3.3.1",
         "json-loader": "^0.5.7",
-        "lite-server": "^2.4.0",
         "nuka-carousel": "^4.3.6",
         "popper.js": "^1.14.4",
         "prop-types": "^15.6.2",
