@@ -7,7 +7,8 @@
         "test": "test"
     },
     "scripts": {
-        "start": "lite-server",
+        "start": "npm run prod",
+        "prod": "lite-server",
         "build": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
