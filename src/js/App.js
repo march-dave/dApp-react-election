@@ -12,11 +12,11 @@ import "bootstrap/dist/js/bootstrap.js";
 // import { Route } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../styles/app.css'
-import Home from './container/Home';
-import DBPlatform from './container/DBPlatform'; 
-import MarketPlace from './container/MarketPlace';
-import ReverseAuction from './container/ReverseAuction';
-import Help from './container/Help'; 
+// import Home from './container/Home';
+// import DBPlatform from './container/DBPlatform'; 
+// import MarketPlace from './container/MarketPlace';
+// import ReverseAuction from './container/ReverseAuction';
+// import Help from './container/Help'; 
 
 import Menu from './Menu.js'
 import $ from 'jquery';
@@ -177,7 +177,7 @@ class App extends React.Component {
       }
 
       let account = accounts[0];
-      // console.log('account: ' + account);
+      console.log('account: ' + account); 
         this.contracts.deployed().then( (instance) => {
         // console.log('instance: ' + instance);
         let nameUtf8Encoded = utf8.encode(name);
@@ -219,9 +219,9 @@ class App extends React.Component {
           </div>
           <div className="col-sm-8">
             <div style={{ paddingTop: "7px"}}>
-            {/* <Menu /> */}
+            <Menu />
             
-            <Router>
+            {/* <Router>
             <div>
               <Menu />
               <Switch>
@@ -233,7 +233,7 @@ class App extends React.Component {
                 <Route component={Help} />
               </Switch>
             </div>
-          </Router>
+          </Router> */}
             
             </div>
           </div>
