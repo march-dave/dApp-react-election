@@ -130,7 +130,7 @@ class App extends React.Component {
         } else {
           console.error(error);
         } 
-        // this.loadRealEstates();
+         this.loadRealEstates();
       })
     })
   }
